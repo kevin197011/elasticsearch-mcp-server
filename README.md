@@ -1,0 +1,1 @@
+# elasticsearch-mcp-server

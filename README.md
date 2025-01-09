@@ -4,6 +4,8 @@
 
 A Model Context Protocol (MCP) server implementation that provides Elasticsearch interaction. This server enables searching documents, analyzing indices, and managing cluster through a set of tools.
 
+https://github.com/user-attachments/assets/f7409e31-fac4-4321-9c94-b0ff2ea7ff15
+
 ## Features
 
 ### Index Operations
@@ -18,7 +20,7 @@ A Model Context Protocol (MCP) server implementation that provides Elasticsearch
 
 ### Cluster Operations
 
-- `get_cluster_health`: Get basic health status of the cluster.
+- `get_cluster_health`: Get health status of the cluster.
 - `get_cluster_stats`: Get statistical information about the cluster.
 
 
@@ -66,5 +68,5 @@ You can access Kibana from https://localhost:5601.
 
 Now you can interact with your Elasticsearch cluster through Claude using natural language commands like:
 - "List all indices in the cluster"
-- "Who is the youngest student?"
+- "How old is the student Bob?"
 - "Show me the cluster health status"

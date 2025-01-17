@@ -13,7 +13,7 @@ class BaseTools:
         # Load environment variables from .env file
         load_dotenv()
         config = {
-            "host": os.getenv("ELASTIC_HOST", "https://localhost:9200"),
+            "host": os.getenv("ELASTIC_HOST"),
             "username": os.getenv("ELASTIC_USERNAME"),
             "password": os.getenv("ELASTIC_PASSWORD")
         }

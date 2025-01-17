@@ -6,6 +6,8 @@ A Model Context Protocol (MCP) server implementation that provides Elasticsearch
 
 https://github.com/user-attachments/assets/f7409e31-fac4-4321-9c94-b0ff2ea7ff15
 
+<a href="https://glama.ai/mcp/servers/b3po3delex"><img width="380" height="200" src="https://glama.ai/mcp/servers/b3po3delex/badge" alt="Elasticsearch MCP Server" /></a>
+
 ## Features
 
 ### Index Operations

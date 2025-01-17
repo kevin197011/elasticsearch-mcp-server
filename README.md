@@ -34,7 +34,7 @@ docker-compose up -d
 
 This will start a 3-node Elasticsearch cluster and Kibana. Default Elasticsearch username `elastic`, password `test123`.
 
-You can access Kibana from https://localhost:5601.
+You can access Kibana from http://localhost:5601.
 
 ## Usage with Claude Desktop
 

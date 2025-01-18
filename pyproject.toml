@@ -1,6 +1,6 @@
 [project]
 name = "elasticsearch-mcp-server"
-version = "0.0.2"
+version = "0.0.3"
 description = "MCP Server for interacting with Elasticsearch"
 readme = "README.md"
 requires-python = ">=3.10"

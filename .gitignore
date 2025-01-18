@@ -1,4 +1,6 @@
-.venv
 .vscode
+.idea
+.venv
+dist
 __pycache__
 *.egg-info

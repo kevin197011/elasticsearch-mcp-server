@@ -4,9 +4,11 @@
 
 A Model Context Protocol (MCP) server implementation that provides Elasticsearch interaction. This server enables searching documents, analyzing indices, and managing cluster through a set of tools.
 
-https://github.com/user-attachments/assets/f7409e31-fac4-4321-9c94-b0ff2ea7ff15
-
 <a href="https://glama.ai/mcp/servers/b3po3delex"><img width="380" height="200" src="https://glama.ai/mcp/servers/b3po3delex/badge" alt="Elasticsearch MCP Server" /></a>
+
+## Demo
+
+https://github.com/user-attachments/assets/f7409e31-fac4-4321-9c94-b0ff2ea7ff15
 
 ## Features
 
@@ -42,6 +44,32 @@ You can access Kibana from http://localhost:5601.
 
 1. Add the following configuration to Claude Desktop's config file `claude_desktop_config.json`:
 
+### Option 1: Using uvx (Recommended)
+
+Using `uvx` will automatically install the package from PyPI, no need to clone the repository locally
+
+```json
+{
+  "mcpServers": {
+    "elasticsearch-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "elasticsearch-mcp-server"
+      ],
+      "env": {
+        "ELASTIC_HOST": "https://localhost:9200",
+        "ELASTIC_USERNAME": "elastic",
+        "ELASTIC_PASSWORD": "test123"
+      }
+    }
+  }
+}
+```
+
+### Option 2: Using uv with local development
+
+Using `uv` requires cloning the repository locally and specifying the path to the source code.
+
 ```json
 {
   "mcpServers": {
@@ -49,14 +77,14 @@ You can access Kibana from http://localhost:5601.
       "command": "uv",
       "args": [
         "--directory",
-        "path/to/elasticsearch_mcp_server/src",
+        "path/to/src/elasticsearch_mcp_server",
         "run",
-        "server.py"
+        "elasticsearch-mcp-server"
       ],
       "env": {
-        "ELASTIC_HOST": "<your_elastic_url>",
-        "ELASTIC_USERNAME": "<your_elastic_username>",
-        "ELASTIC_PASSWORD": "<your_elastic_password>>"
+        "ELASTIC_HOST": "https://localhost:9200",
+        "ELASTIC_USERNAME": "elastic",
+        "ELASTIC_PASSWORD": "test123"
       }
     }
   }
@@ -72,3 +100,7 @@ Now you can interact with your Elasticsearch cluster through Claude using natura
 - "List all indices in the cluster"
 - "How old is the student Bob?"
 - "Show me the cluster health status"
+
+## License
+
+This project is licensed under the Apache License Version 2.0 - see the [LICENSE](LICENSE) file for details.

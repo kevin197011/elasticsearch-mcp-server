@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import logging
 from fastmcp import FastMCP
-from tools import IndexTools, DocumentTools, ClusterTools
+from .tools.index import IndexTools
+from .tools.document import DocumentTools
+from .tools.cluster import ClusterTools
 
 class ElasticsearchMCPServer:
     def __init__(self):
@@ -34,6 +36,6 @@ class ElasticsearchMCPServer:
         """Run the MCP server."""
         self.mcp.run()
 
-if __name__ == "__main__":
+def main():
     server = ElasticsearchMCPServer()
     server.run()

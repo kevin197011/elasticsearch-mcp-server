@@ -13,8 +13,6 @@ on:
     workflows: ["Release"]
     types:
       - completed
-    branches:
-      - main
 
 env:
   UV_PUBLISH_TOKEN: '${{ secrets.PYPI_API_TOKEN }}'

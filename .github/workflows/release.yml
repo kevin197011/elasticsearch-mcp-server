@@ -31,7 +31,7 @@ jobs:
 
       - name: Generate changelog
         run: |
-          git-cliff --output CHANGELOG.md
+          git-cliff --output CHANGELOG.md --latest
 
       - name: Create Release
         uses: softprops/action-gh-release@v1

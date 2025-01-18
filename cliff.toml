@@ -84,3 +84,17 @@ filter_commits = false
 topo_order = false
 # sort the commits inside sections by oldest/newest order
 sort_commits = "oldest"
+# regex for matching git tags
+tag_pattern = "^v[0-9]"
+# regex for skipping tags
+skip_tags = ""
+# regex for ignoring tags
+ignore_tags = ""
+# use tag date instead of commit date
+date_order = true
+# path to git binary
+git_path = "git"
+# whether to use relaxed or strict semver parsing
+relaxed_semver = true
+# only show the changes for the current version
+tag_range = true

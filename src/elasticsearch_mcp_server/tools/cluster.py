@@ -1,8 +1,9 @@
-from typing import Any
+import logging
+from typing import Dict, Any
+from ..es_client import ElasticsearchClient
 from mcp.types import TextContent
-from .base import BaseTools
 
-class ClusterTools(BaseTools):
+class ClusterTools(ElasticsearchClient):
     def register_tools(self, mcp: Any):
         """Register cluster-related tools."""
         

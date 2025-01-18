@@ -2,8 +2,9 @@ import logging
 import os
 from dotenv import load_dotenv
 from elasticsearch import Elasticsearch
+import warnings
 
-class BaseTools:
+class ElasticsearchClient:
     def __init__(self, logger: logging.Logger):
         self.logger = logger
         self.es_client = self._create_elasticsearch_client()
@@ -28,6 +29,10 @@ class BaseTools:
     def _create_elasticsearch_client(self) -> Elasticsearch:
         """Create and return an Elasticsearch client using configuration from environment."""
         config = self._get_es_config()
+
+        # Disable SSL warnings
+        warnings.filterwarnings("ignore", message=".*TLS with verify_certs=False is insecure.*",)
+
         return Elasticsearch(
             config["host"],
             basic_auth=(config["username"], config["password"]),

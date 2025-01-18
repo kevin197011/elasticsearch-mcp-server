@@ -42,7 +42,7 @@ You can access Kibana from http://localhost:5601.
 
 ## Usage with Claude Desktop
 
-1. Add the following configuration to Claude Desktop's config file `claude_desktop_config.json`:
+Add the following configuration to Claude Desktop's config file `claude_desktop_config.json`.
 
 ### Option 1: Using uvx (Recommended)
 
@@ -94,7 +94,7 @@ Using `uv` requires cloning the repository locally and specifying the path to th
 - On macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
-3. Restart Claude Desktop to load the new MCP server.
+Restart Claude Desktop to load the new MCP server.
 
 Now you can interact with your Elasticsearch cluster through Claude using natural language commands like:
 - "List all indices in the cluster"

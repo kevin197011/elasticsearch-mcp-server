@@ -9,20 +9,20 @@
 name: PyPI Publish
 
 on:
-  workflow_dispatch:
-  push:
-    # Pattern matched against refs/tags
-    tags:
-      - 'v*'           # Push events to every version tag
+  workflow_run:
+    workflows: ["Release"]
+    types:
+      - completed
+    branches:
+      - main
 
 env:
   UV_PUBLISH_TOKEN: '${{ secrets.PYPI_API_TOKEN }}'
 
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
-
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - uses: actions/checkout@v2
 

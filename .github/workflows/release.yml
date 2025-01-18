@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install git-cliff tomli tomli-w
+
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+      - name: Update version in pyproject.toml
+        run: |
+          python -c '
+          import tomli
+          import tomli_w
+          with open("pyproject.toml", "rb") as f:
+              data = tomli.load(f)
+          data["project"]["version"] = "${{ env.VERSION }}"
+          with open("pyproject.toml", "wb") as f:
+              tomli_w.dump(data, f)
+          '
+
+      - name: Generate changelog
+        run: |
+          git-cliff --output CHANGELOG.md
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ env.VERSION }}
+          body_path: CHANGELOG.md
+          draft: false
+          prerelease: false

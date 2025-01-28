@@ -1,5 +1,7 @@
 # Elasticsearch MCP Server
 
+[![smithery badge](https://smithery.ai/badge/elasticsearch-mcp-server)](https://smithery.ai/server/elasticsearch-mcp-server)
+
 ## Overview
 
 A Model Context Protocol (MCP) server implementation that provides Elasticsearch interaction. This server enables searching documents, analyzing indices, and managing cluster through a set of tools.
@@ -43,6 +45,14 @@ You can access Kibana from http://localhost:5601.
 ## Usage with Claude Desktop
 
 Add the following configuration to Claude Desktop's config file `claude_desktop_config.json`.
+
+### Installing via Smithery
+
+To install Elasticsearch Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/elasticsearch-mcp-server):
+
+```bash
+npx -y @smithery/cli install elasticsearch-mcp-server --client claude
+```
 
 ### Option 1: Using uvx (Recommended)
 

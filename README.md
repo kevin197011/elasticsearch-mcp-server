@@ -44,9 +44,7 @@ You can access Kibana from http://localhost:5601.
 
 ## Usage with Claude Desktop
 
-Add the following configuration to Claude Desktop's config file `claude_desktop_config.json`.
-
-### Installing via Smithery
+### Option 1: Installing via Smithery
 
 To install Elasticsearch Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/elasticsearch-mcp-server):
 
@@ -54,9 +52,9 @@ To install Elasticsearch Server for Claude Desktop automatically via [Smithery](
 npx -y @smithery/cli install elasticsearch-mcp-server --client claude
 ```
 
-### Option 1: Using uvx (Recommended)
+### Option 2: Using uvx
 
-Using `uvx` will automatically install the package from PyPI, no need to clone the repository locally
+Using `uvx` will automatically install the package from PyPI, no need to clone the repository locally. Add the following configuration to Claude Desktop's config file `claude_desktop_config.json`.
 
 ```json
 {
@@ -76,9 +74,9 @@ Using `uvx` will automatically install the package from PyPI, no need to clone t
 }
 ```
 
-### Option 2: Using uv with local development
+### Option 3: Using uv with local development
 
-Using `uv` requires cloning the repository locally and specifying the path to the source code.
+Using `uv` requires cloning the repository locally and specifying the path to the source code. Add the following configuration to Claude Desktop's config file `claude_desktop_config.json`.
 
 ```json
 {

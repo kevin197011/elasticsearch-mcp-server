@@ -8,8 +8,11 @@ WORKDIR /app
 # Copy necessary files
 COPY . .
 
-# Install Hatchling to handle the build
-RUN pip install hatchling
+# Install hatch to handle the build
+RUN pip install hatch
+
+# Clean dist directory before build
+RUN rm -rf dist/*
 
 # Use hatch to build the package and install it
 RUN hatch build && pip install dist/*.whl

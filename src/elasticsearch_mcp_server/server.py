@@ -4,6 +4,7 @@ from fastmcp import FastMCP
 from .tools.index import IndexTools
 from .tools.document import DocumentTools
 from .tools.cluster import ClusterTools
+from .tools.alias import AliasTools
 
 class ElasticsearchMCPServer:
     def __init__(self):
@@ -26,11 +27,13 @@ class ElasticsearchMCPServer:
         index_tools = IndexTools(self.logger)
         document_tools = DocumentTools(self.logger)
         cluster_tools = ClusterTools(self.logger)
+        alias_tools = AliasTools(self.logger)
         
         # Register tools from each module
         index_tools.register_tools(self.mcp)
         document_tools.register_tools(self.mcp)
         cluster_tools.register_tools(self.mcp)
+        alias_tools.register_tools(self.mcp)
 
     def run(self):
         """Run the MCP server."""

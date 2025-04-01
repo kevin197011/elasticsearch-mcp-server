@@ -41,10 +41,7 @@ class ElasticsearchMCPServer:
     def _create_elasticsearch_client(self) -> Elasticsearch:
         """Create and return an Elasticsearch client using configuration from environment."""
         config = self._get_es_config()
-
-        # Disable SSL warnings
-        warnings.filterwarnings("ignore", message=".*TLS with verify_certs=False is insecure.*",)
-
+        
         return Elasticsearch(
             config["host"],
             basic_auth=(config["username"], config["password"]),

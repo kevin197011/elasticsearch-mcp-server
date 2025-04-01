@@ -65,9 +65,9 @@ Using `uvx` will automatically install the package from PyPI, no need to clone t
         "elasticsearch-mcp-server"
       ],
       "env": {
-        "ELASTIC_HOST": "https://localhost:9200",
-        "ELASTIC_USERNAME": "elastic",
-        "ELASTIC_PASSWORD": "test123"
+        "ELASTICSEARCH_HOST": "https://localhost:9200",
+        "ELASTICSEARCH_USERNAME": "elastic",
+        "ELASTICSEARCH_PASSWORD": "test123"
       }
     }
   }
@@ -90,9 +90,9 @@ Using `uv` requires cloning the repository locally and specifying the path to th
         "elasticsearch-mcp-server"
       ],
       "env": {
-        "ELASTIC_HOST": "https://localhost:9200",
-        "ELASTIC_USERNAME": "elastic",
-        "ELASTIC_PASSWORD": "test123"
+        "ELASTICSEARCH_HOST": "https://localhost:9200",
+        "ELASTICSEARCH_USERNAME": "elastic",
+        "ELASTICSEARCH_PASSWORD": "test123"
       }
     }
   }

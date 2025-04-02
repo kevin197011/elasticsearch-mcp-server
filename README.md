@@ -30,17 +30,21 @@ https://github.com/user-attachments/assets/f7409e31-fac4-4321-9c94-b0ff2ea7ff15
 - `get_cluster_stats`: Get statistical information about the cluster.
 
 
-## Start Elasticsearch Cluster
+## Start Elasticsearch/OpenSearch Cluster
 
-Start the Elasticsearch cluster using Docker Compose:
+Start the Elasticsearch/OpenSearch cluster using Docker Compose:
 
 ```bash
-docker-compose up -d
+# For Elasticsearch
+docker-compose -f setup/elasticsearch-docker-compose.yml up -d
+
+# For OpenSearch
+docker-compose -f setup/opensearch-docker-compose.yml up -d
 ```
 
-This will start a 3-node Elasticsearch cluster and Kibana. Default Elasticsearch username `elastic`, password `test123`.
+The default Elasticsearch username is `elastic` and password is `test123`. The default OpenSearch username is `admin` and password is `admin`.
 
-You can access Kibana from http://localhost:5601.
+You can access Kibana/OpenSearch Dashboards from http://localhost:5601.
 
 ## Usage with Claude Desktop
 

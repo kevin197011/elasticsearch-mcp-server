@@ -1,5 +1,5 @@
 [project]
-name = "search-mcp-server"
+name = "elasticsearch-mcp-server"
 version = "1.0.0"
 description = "MCP Server for interacting with Elasticsearch and OpenSearch"
 readme = "README.md"

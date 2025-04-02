@@ -9,10 +9,19 @@ class DocumentClient(SearchClientBase):
     
     def index_document(self, index: str, document: Dict, id: Optional[str] = None) -> Dict:
         """Creates a new document in the index."""
-        if id is not None:
-            return self.client.index(index=index, document=document, id=id)
+        # Handle parameter name differences between Elasticsearch and OpenSearch
+        if self.engine_type == "elasticsearch":
+            # For Elasticsearch: index(index, document, id=None, ...)
+            if id is not None:
+                return self.client.index(index=index, document=document, id=id)
+            else:
+                return self.client.index(index=index, document=document)
         else:
-            return self.client.index(index=index, document=document)
+            # For OpenSearch: index(index, body, id=None, ...)
+            if id is not None:
+                return self.client.index(index=index, body=document, id=id)
+            else:
+                return self.client.index(index=index, body=document)
     
     def get_document(self, index: str, id: str) -> Dict:
         """Get a document by ID."""

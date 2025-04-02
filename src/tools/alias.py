@@ -8,7 +8,7 @@ class AliasTools:
     def register_tools(self, mcp: FastMCP):
         @mcp.tool()
         def list_aliases() -> List[Dict]:
-            """List all aliases in the Elasticsearch cluster."""
+            """List all aliases."""
             return self.search_client.list_aliases()
 
         @mcp.tool()

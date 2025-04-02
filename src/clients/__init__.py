@@ -1,10 +1,7 @@
-# Python 内置包
 import os
 
-# 第三方包
 from dotenv import load_dotenv
 
-# 本项目包
 from src.clients.common.client import SearchClient
 from src.clients.exceptions import handle_search_exceptions
 

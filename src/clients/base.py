@@ -24,7 +24,7 @@ class SearchClientBase(ABC):
         
         # Disable insecure request warnings if verify_certs is False
         if not verify_certs:
-            warnings.filterwarnings("ignore", message=".*TLS with verify_certs=False is insecure.*")
+            warnings.filterwarnings("ignore", message=".*verify_certs=False is insecure.*")
             warnings.filterwarnings("ignore", message=".*Unverified HTTPS request is being made to host.*")
             
             try:

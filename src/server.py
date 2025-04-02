@@ -1,4 +1,5 @@
 import logging
+import sys
 
 from fastmcp import FastMCP
 
@@ -55,3 +56,16 @@ def elasticsearch_mcp_server():
 def opensearch_mcp_server():
     """Entry point for OpenSearch MCP server."""
     run_search_server(engine_type="opensearch")
+
+if __name__ == "__main__":
+    # Default to Elasticsearch
+    engine_type = "elasticsearch"
+    
+    # If command line arguments are provided, use the first argument as the engine type
+    if len(sys.argv) > 1:
+        engine_type = sys.argv[1].lower()
+    
+    if engine_type == "opensearch":
+        opensearch_mcp_server()
+    else:
+        elasticsearch_mcp_server()

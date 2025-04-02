@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
+import sys
+
+sys.path.append("../")
 import logging
 from fastmcp import FastMCP
-from .tools.index import IndexTools
-from .tools.document import DocumentTools
-from .tools.cluster import ClusterTools
-from .tools.alias import AliasTools
+from elasticsearch_mcp_server.tools.index import IndexTools
+from elasticsearch_mcp_server.tools.document import DocumentTools
+from elasticsearch_mcp_server.tools.cluster import ClusterTools
+from elasticsearch_mcp_server.tools.alias import AliasTools
 
 class ElasticsearchMCPServer:
     def __init__(self):
@@ -42,3 +45,6 @@ class ElasticsearchMCPServer:
 def main():
     server = ElasticsearchMCPServer()
     server.run()
+
+if __name__ == '__main__':
+    main()

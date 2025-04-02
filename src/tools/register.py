@@ -1,6 +1,8 @@
 import logging
 from typing import List, Type
+
 from fastmcp import FastMCP
+
 from src.clients import SearchClient
 from src.clients.exceptions import with_exception_handling
 

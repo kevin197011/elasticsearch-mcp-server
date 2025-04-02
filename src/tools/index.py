@@ -1,4 +1,5 @@
 from typing import Dict, Optional, List
+
 from fastmcp import FastMCP
 
 class IndexTools:

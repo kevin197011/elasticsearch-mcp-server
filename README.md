@@ -41,6 +41,10 @@ https://github.com/user-attachments/assets/f7409e31-fac4-4321-9c94-b0ff2ea7ff15
 - `put_alias`: Create or update an alias for a specific index.
 - `delete_alias`: Delete an alias for a specific index.
 
+## Configure Environment Variables
+
+Copy the `.env.example` file to `.env` and update the values accordingly.
+
 ## Start Elasticsearch/OpenSearch Cluster
 
 Start the Elasticsearch/OpenSearch cluster using Docker Compose:

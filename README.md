@@ -109,6 +109,15 @@ Now you can interact with your Elasticsearch cluster through Claude using natura
 - "How old is the student Bob?"
 - "Show me the cluster health status"
 
+## Usage with Anthropic ApiKey
+
+```python
+uv run src/elasticsearch_mcp_server/server.py
+
+uv run src/mcp_client/client.py src/elasticsearch_mcp_server/server.py
+```
+
+
 ## License
 
 This project is licensed under the Apache License Version 2.0 - see the [LICENSE](LICENSE) file for details.

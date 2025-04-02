@@ -1,8 +1,8 @@
 from typing import Dict, Optional
-from .base import BaseElasticsearchClient
-from ..interfaces.index import IndexClientInterface
 
-class ElasticsearchIndexClient(BaseElasticsearchClient, IndexClientInterface):
+from src.clients.base import SearchClientBase
+
+class IndexClient(SearchClientBase):
     def list_indices(self) -> Dict:
         """List all indices."""
         return self.client.cat.indices()

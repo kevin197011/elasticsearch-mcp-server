@@ -1,33 +1,45 @@
-from typing import Dict
-from .elasticsearch.client import ElasticsearchClient
-from .opensearch.client import OpenSearchClient
-from .interfaces import SearchClient
+# Python 内置包
+import os
 
-def create_search_client(config: Dict, engine_type: str) -> SearchClient:
+# 第三方包
+from dotenv import load_dotenv
+
+# 本项目包
+from src.clients.common.client import SearchClient
+from src.clients.exceptions import handle_search_exceptions
+
+def create_search_client(engine_type: str) -> SearchClient:
     """
-    Factory function to create the appropriate search client.
+    Create a search client for the specified engine type.
     
     Args:
-        config: Configuration dictionary with connection parameters
         engine_type: Type of search engine to use ("elasticsearch" or "opensearch")
         
     Returns:
-        SearchClient: An instance of the appropriate search client
-        
-    Raises:
-        ValueError: If an invalid engine type is specified
+        A search client instance
     """
-    if engine_type.lower() == "elasticsearch":
-        return ElasticsearchClient(config)
-    elif engine_type.lower() == "opensearch":
-        return OpenSearchClient(config)
-    else:
-        raise ValueError(f"Invalid engine type: {engine_type}. Must be 'elasticsearch' or 'opensearch'")
+    # Load configuration from environment variables
+    load_dotenv()
+    
+    # Get configuration from environment variables
+    prefix = engine_type.upper()
+    hosts_str = os.environ.get(f"{prefix}_HOSTS", "https://localhost:9200")
+    hosts = [host.strip() for host in hosts_str.split(",")]
+    username = os.environ.get(f"{prefix}_USERNAME")
+    password = os.environ.get(f"{prefix}_PASSWORD")
+    verify_certs = os.environ.get(f"{prefix}_VERIFY_CERTS", "false").lower() == "true"
+    
+    config = {
+        "hosts": hosts,
+        "username": username,
+        "password": password,
+        "verify_certs": verify_certs
+    }
+    
+    return SearchClient(config, engine_type)
 
 __all__ = [
     'create_search_client',
     'handle_search_exceptions',
     'SearchClient',
-    'ElasticsearchClient',
-    'OpenSearchClient',
 ]

@@ -1,8 +1,8 @@
 from typing import Dict, Optional
-from .base import BaseOpenSearchClient
-from ..interfaces.document import DocumentClientInterface
 
-class OpenSearchDocumentClient(BaseOpenSearchClient, DocumentClientInterface):
+from src.clients.base import SearchClientBase
+
+class DocumentClient(SearchClientBase):
     def search_documents(self, index: str, body: Dict) -> Dict:
         """Search for documents in the index."""
         return self.client.search(index=index, body=body)
@@ -25,3 +25,4 @@ class OpenSearchDocumentClient(BaseOpenSearchClient, DocumentClientInterface):
     def delete_by_query(self, index: str, body: Dict) -> Dict:
         """Deletes documents matching the provided query."""
         return self.client.delete_by_query(index=index, body=body)
+

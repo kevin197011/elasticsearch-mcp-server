@@ -1,8 +1,9 @@
 import functools
 import logging
 from typing import TypeVar, Callable
-from mcp.types import TextContent
+
 from fastmcp import FastMCP
+from mcp.types import TextContent
 
 T = TypeVar('T')
 

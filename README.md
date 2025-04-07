@@ -85,7 +85,7 @@ Using `uvx` will automatically install the package from PyPI, no need to clone t
         "elasticsearch-mcp-server"
       ],
       "env": {
-        "ELASTICSEARCH_HOST": "https://localhost:9200",
+        "ELASTICSEARCH_HOSTS": "https://localhost:9200",
         "ELASTICSEARCH_USERNAME": "elastic",
         "ELASTICSEARCH_PASSWORD": "test123"
       }
@@ -102,7 +102,7 @@ Using `uvx` will automatically install the package from PyPI, no need to clone t
         "opensearch-mcp-server"
       ],
       "env": {
-        "OPENSEARCH_HOST": "https://localhost:9200",
+        "OPENSEARCH_HOSTS": "https://localhost:9200",
         "OPENSEARCH_USERNAME": "admin",
         "OPENSEARCH_PASSWORD": "admin"
       }
@@ -128,7 +128,7 @@ Using `uv` requires cloning the repository locally and specifying the path to th
         "elasticsearch-mcp-server"
       ],
       "env": {
-        "ELASTICSEARCH_HOST": "https://localhost:9200",
+        "ELASTICSEARCH_HOSTS": "https://localhost:9200",
         "ELASTICSEARCH_USERNAME": "elastic",
         "ELASTICSEARCH_PASSWORD": "test123"
       }
@@ -148,7 +148,7 @@ Using `uv` requires cloning the repository locally and specifying the path to th
         "opensearch-mcp-server"
       ],
       "env": {
-        "OPENSEARCH_HOST": "https://localhost:9200",
+        "OPENSEARCH_HOSTS": "https://localhost:9200",
         "OPENSEARCH_USERNAME": "admin",
         "OPENSEARCH_PASSWORD": "admin"
       }

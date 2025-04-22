@@ -14,6 +14,10 @@ https://github.com/user-attachments/assets/f7409e31-fac4-4321-9c94-b0ff2ea7ff15
 
 ## Features
 
+### General Operations
+
+- `general_api_request`: Perform a general HTTP API request. Use this tool for any Elasticsearch/OpenSearch API that does not have a dedicated tool.
+
 ### Index Operations
 
 - `list_indices`: List all indices.

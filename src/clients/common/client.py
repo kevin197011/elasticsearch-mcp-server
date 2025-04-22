@@ -3,9 +3,10 @@ from typing import Dict
 from src.clients.common.alias import AliasClient
 from src.clients.common.cluster import ClusterClient
 from src.clients.common.document import DocumentClient
+from src.clients.common.general import GeneralClient
 from src.clients.common.index import IndexClient
 
-class SearchClient(IndexClient, DocumentClient, ClusterClient, AliasClient):
+class SearchClient(IndexClient, DocumentClient, ClusterClient, AliasClient, GeneralClient):
     """
     Unified search client that combines all search functionality.
     

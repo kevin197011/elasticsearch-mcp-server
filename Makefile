@@ -10,9 +10,9 @@ release:
 		data = tomli.load(open("pyproject.toml", "rb")); \
 		data["project"]["version"] = "$(version:v%=%)"; \
 		tomli_w.dump(data, open("pyproject.toml", "wb"))'
-	@git add pyproject.toml
+	@python -c 'open("src/version.py", "w").write("__version__ = \"$(version:v%=%)\"\n")'
 	@uv sync
-	@git add uv.lock
+	@git add .
 	@git commit -m "release: update version to $(version:v%=%)"
 	@git push origin main
 	@git tag $(version)

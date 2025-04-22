@@ -2,7 +2,6 @@ import logging
 import sys
 
 from fastmcp import FastMCP
-import toml
 
 from src.clients import create_search_client
 from src.tools.alias import AliasTools
@@ -11,6 +10,7 @@ from src.tools.document import DocumentTools
 from src.tools.general import GeneralTools
 from src.tools.index import IndexTools
 from src.tools.register import ToolsRegister
+from src.version import __version__ as VERSION
 
 class SearchMCPServer:
     def __init__(self, engine_type):
@@ -19,8 +19,7 @@ class SearchMCPServer:
         self.name = f"{self.engine_type}_mcp_server"
         self.mcp = FastMCP(self.name)
         self.logger = logging.getLogger()
-        self.version = toml.load("pyproject.toml")["project"]["version"]
-        self.logger.info(f"Initializing {self.name}, Version: {self.version}")
+        self.logger.info(f"Initializing {self.name}, Version: {VERSION}")
         
         # Create the corresponding search client
         self.search_client = create_search_client(self.engine_type)

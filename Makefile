@@ -12,6 +12,7 @@ release:
 		tomli_w.dump(data, open("pyproject.toml", "wb"))'
 	@git add pyproject.toml
 	@git commit -m "release: update version to $(version:v%=%)"
+	@uv sync
 	@git push origin main
 	@git tag $(version)
 	@git push origin $(version)

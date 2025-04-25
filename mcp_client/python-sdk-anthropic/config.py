@@ -15,7 +15,7 @@ class LoggerConfig(py_set.BaseSettings):
 
 
 class ElasticsearchConfig(py_set.BaseSettings):
-    host: str = getenv("ELASTICSEARCH_HOST", "")
+    host: str = getenv("ELASTICSEARCH_HOSTS", "")
     port: int = int(getenv("ELASTICSEARCH_PORT", "30930"))
     scroll_size: int = 10_000
     scroll: str = "1m"

@@ -6,11 +6,11 @@ startCommand:
     # JSON Schema defining the configuration options for the MCP.
     type: object
     required:
-      - elasticsearchHost
+      - elasticsearchHosts
       - elasticsearchUsername
       - elasticsearchPassword
     properties:
-      elasticsearchHost:
+      elasticsearchHosts:
         type: string
         description: The host URL of the Elasticsearch cluster.
       elasticsearchUsername:
@@ -22,4 +22,4 @@ startCommand:
   commandFunction:
     # A function that produces the CLI command to start the MCP on stdio.
     |-
-    (config) => ({ command: 'elasticsearch-mcp-server', env: { ELASTICSEARCH_HOST: config.elasticsearchHost, ELASTICSEARCH_USERNAME: config.elasticsearchUsername, ELASTICSEARCH_PASSWORD: config.elasticsearchPassword } })
+    (config) => ({ command: 'elasticsearch-mcp-server', env: { ELASTICSEARCH_HOSTS: config.elasticsearchHosts, ELASTICSEARCH_USERNAME: config.elasticsearchUsername, ELASTICSEARCH_PASSWORD: config.elasticsearchPassword } })

@@ -1,0 +1,22 @@
+services:
+  elasticsearch-mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: elasticsearch-mcp-server
+    ports:
+      - "8002:8002"
+    restart: always
+    environment:
+      - ELASTICSEARCH_HOST=elasticsearch-mcp-server
+      - ELASTICSEARCH_PORT=9200
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=changeme
+      - ELASTICSEARCH_SCHEME=https
+      - ELASTICSEARCH_SSL_VERIFICATION=false
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge
